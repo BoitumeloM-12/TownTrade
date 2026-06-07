@@ -1,0 +1,460 @@
+/* this file controls all the colours, fonts and layout
+   for the whole website */
+
+/* Fonts imported from Sora for headings and Inter for body text
+   both are free Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* -------------------------------------------------------
+   Colour Variable
+   i put all colours here so i only need to change
+   one place if i want to update the theme
+------------------------------------------------------- */
+:root {
+    --green:        #1A7A4A;
+    --green-light:  #25A366;
+    --green-dark:   #0F4D2E;
+    --gold:         #F5A623;
+    --dark:         #0F1A14;
+    --card-bg:      #162219;
+    --border:       #1F3328;
+    --text:         #E8F0EB;
+    --muted:        #C8D8CC;
+}
+
+/* -------------------------------------------------------
+   BASE STYLES
+   applies to the whole page
+------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Sora', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------
+   NAVBAR
+------------------------------------------------------- */
+#main-nav {
+    background-color: rgba(15, 26, 20, 0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+}
+
+#main-nav .nav-link {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    transition: color 0.2s;
+}
+
+#main-nav .nav-link:hover,
+#main-nav .nav-link.active {
+    color: #fff;
+}
+
+/* -------------------------------------------------------
+   COLOURS AND BACKGROUNDS
+------------------------------------------------------- */
+.bg-dark-green {
+    background-color: var(--dark);
+}
+
+.bg-card {
+    background-color: var(--card-bg) !important;
+}
+
+.border-green {
+    border: 1px solid var(--border) !important;
+    border-radius: 14px !important;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.text-green-light {
+    color: var(--green-light);
+}
+
+/* -------------------------------------------------------
+   BUTTONS
+------------------------------------------------------- */
+.btn-gold {
+    background-color: var(--gold);
+    color: #0F1A14;
+    border: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-gold:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    color: #0F1A14;
+}
+
+.btn-green {
+    background-color: var(--green);
+    color: #fff;
+    border: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-green:hover {
+    background-color: var(--green-light);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-outline-green {
+    border: 1px solid var(--green);
+    color: var(--green-light);
+    background: transparent;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-outline-green:hover {
+    background-color: var(--green);
+    color: #fff;
+}
+
+/* -------------------------------------------------------
+   HERO SECTION (homepage banner)
+------------------------------------------------------- */
+.hero-section {
+    padding: 5rem 0 3rem;
+    text-align: center;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%,
+        rgba(26,122,74,0.2) 0%, transparent 70%);
+}
+
+.hero-section h1 {
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    color: #E8F0EB;
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(26,122,74,0.2);
+    border: 1px solid rgba(26,122,74,0.5);
+    color: var(--green-light);
+    padding: 0.3rem 1rem;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Sora', sans-serif;
+    margin-bottom: 1.25rem;
+}
+
+/* -------------------------------------------------------
+   STATS BAR
+------------------------------------------------------- */
+.stats-bar {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
+    margin: 2rem 0;
+}
+
+.stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--gold);
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+}
+
+/* -------------------------------------------------------
+   LISTING CARDS
+------------------------------------------------------- */
+.listing-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.listing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(26,122,74,0.15);
+}
+
+.listing-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    background-color: var(--border);
+}
+
+.listing-card .card-body {
+    padding: 1rem;
+}
+
+.listing-card .card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+}
+
+.listing-card .card-text {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.price-tag {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+/* -------------------------------------------------------
+   VERIFIED BADGE
+------------------------------------------------------- */
+.verified-badge {
+    display: inline-block;
+    background: rgba(26,122,74,0.15);
+    color: var(--green-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-family: 'Sora', sans-serif;
+}
+
+/* -------------------------------------------------------
+   CATEGORY FILTER PILLS
+------------------------------------------------------- */
+.filter-pill {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    transition: all 0.2s;
+    background: transparent;
+    margin: 0.25rem;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+    background-color: var(--green);
+    border-color: var(--green);
+    color: #fff;
+}
+
+/* -------------------------------------------------------
+   FORM CONTROLS (overrides Bootstrap defaults)
+------------------------------------------------------- */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--green) !important;
+    box-shadow: 0 0 0 0.2rem rgba(26,122,74,0.25) !important;
+}
+
+/* -------------------------------------------------------
+   PROFILE PAGE
+------------------------------------------------------- */
+.avatar-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Sora', sans-serif;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* -------------------------------------------------------
+   ADMIN PANEL SIDEBAR
+------------------------------------------------------- */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 230px;
+    background-color: var(--card-bg);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 1rem;
+    flex-shrink: 0;
+}
+
+.admin-sidebar .brand {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 0.6rem 0.85rem;
+    color: var(--muted);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    transition: all 0.2s;
+}
+
+.admin-sidebar a:hover,
+.admin-sidebar a.active {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* -------------------------------------------------------
+   ADMIN STAT CARDS
+------------------------------------------------------- */
+.admin-stat-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.admin-stat-card .stat-num {
+    font-size: 2rem;
+}
+
+/* -------------------------------------------------------
+   TABLES (admin panel)
+------------------------------------------------------- */
+.table-dark-custom {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table-dark-custom thead th {
+    background-color: var(--green-dark);
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Sora', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-color: var(--border);
+}
+
+.table-dark-custom tbody td {
+    border-color: var(--border);
+    font-size: 0.88rem;
+    vertical-align: middle;
+}
+
+.table-dark-custom tbody tr:hover {
+    background-color: rgba(26,122,74,0.07);
+}
+
+/* -------------------------------------------------------
+   FOOTER
+------------------------------------------------------- */
+.main-footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.83rem;
+    margin-top: 3rem;
+}
+
+/* -------------------------------------------------------
+   RESPONSIVE - smaller screens
+------------------------------------------------------- */
+@media (max-width: 768px) {
+    .admin-wrapper {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+    }
+
+    .admin-sidebar a {
+        display: inline-block;
+        margin-right: 0.4rem;
+    }
+
+    .hero-section {
+        padding: 3rem 0 2rem;
+    }
+
+    .stat-num {
+        font-size: 1.3rem;
+    }
+}
+.hero-section p,
+.hero-section .text-muted,
+.section-sub,
+.stat-label,
+.card-text {
+    color: #E8F0EB !important;
+}
